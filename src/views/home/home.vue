@@ -314,13 +314,13 @@ export default {
   .links-container {
     .card {
       .custom-content {
-        color: #0065ff;
+        color: #2bae66;
         cursor: pointer;
         .custom-boder {
           width: 45px;
           height: 45px;
           margin: auto;
-          border: 2px solid #0065ff;
+          border: 2px solid #2bae66;
           border-radius: 25px;
           transition: 0.3s;
           i {
