@@ -53,6 +53,127 @@
         <p>When it comes to health and wellbeing, we want to give you and your family peace of mind, whenever and wherever you need it.</p>
       </div>
     </div>
+
+    <!-- manage section -->
+    <div class="manage">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-7 m-auto text-center">
+            <h1 class="mb-4">The smart way to manage your health</h1>
+            <p>Doctor Care Anywhere offers calm, reassuring support and advice and all the tools you need to take care of you and your family’s health, whenever and wherever you need it. Simple, safe, secure support. All at the touch of a button.</p>
+          </div>
+        </div>
+      </div>
+      <img src="../../assets/static/appmontage-2x.png" class="img-fluid mb-5" />
+      <div class="container links-container">
+        <div class="row py-2">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2 text-center mb-0">
+            <div class="card border-0 rounde-0">
+              <div class="custom-content">
+                <div class="custom-boder">
+                  <div class="flex-center flex-column">
+                    <i class="far fa-calendar-alt"></i>
+                  </div>
+                </div>
+                <h6 class="mb-3">Appointments</h6>
+              </div>
+              <p>Video and phone GP appointments 8am – 10pm everyday</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2 text-center mb-0">
+            <div class="card border-0 rounde-0">
+              <div class="custom-content">
+                <div class="custom-boder">
+                  <div class="flex-center flex-column">
+                    <i class="fas fa-file-medical"></i>
+                  </div>
+                </div>
+                <h6 class="mb-3">Prescriptions</h6>
+              </div>
+              <p>Video and phone GP appointments 8am – 10pm everyday</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2 text-center mb-0">
+            <div class="card border-0 rounde-0">
+              <div class="custom-content">
+                <div class="custom-boder">
+                  <div class="flex-center flex-column">
+                    <i class="fas fa-file-contract"></i>
+                  </div>
+                </div>
+                <h6 class="mb-3">Referrals & fit notes</h6>
+              </div>
+              <p>Video and phone GP appointments 8am – 10pm everyday</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2 text-center mb-0">
+            <div class="card border-0 rounde-0">
+              <div class="custom-content">
+                <div class="custom-boder">
+                  <div class="flex-center flex-column">
+                    <i class="far fa-heart"></i>
+                  </div>
+                </div>
+                <h6 class="mb-3">Health tracking</h6>
+              </div>
+              <p>Video and phone GP appointments 8am – 10pm everyday</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2 text-center mb-0">
+            <div class="card border-0 rounde-0">
+              <div class="custom-content">
+                <div class="custom-boder">
+                  <div class="flex-center flex-column">
+                    <i class="far fa-user"></i>
+                  </div>
+                </div>
+                <h6 class="mb-3">Patient records</h6>
+              </div>
+              <p>Video and phone GP appointments 8am – 10pm everyday</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2 text-center mb-0">
+            <div class="card border-0 rounde-0">
+              <div class="custom-content">
+                <div class="custom-boder">
+                  <div class="flex-center flex-column">
+                    <i class="fas fa-globe-europe"></i>
+                  </div>
+                </div>
+                <h6 class="mb-3">Travelling abroad</h6>
+              </div>
+              <p>Video and phone GP appointments 8am – 10pm everyday</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Happy paitient -->
+    <div class="happy-paitients">
+      <div class="custom-overlay">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-8 col-lg-6">
+              <h1 class="mb-4">Happy doctors make happy patients</h1>
+              <p
+                class="mb-4"
+              >That’s why we go out of our way to find the very best doctors we can. As a doctor founded company, all our GPs are chosen by doctors and specially trained in video consultation skills to give you the best quality medical care, whenever you need it.</p>
+              <router-link to="/" class="btn shadow-none">
+                Our Doctors
+                <i class="fas fa-angle-right ml-2"></i>
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="../../assets/static/happy_patient.jpg" class="img-fluid" />
+    </div>
   </div>
 </template>
 <script>
@@ -121,7 +242,6 @@ export default {
     h1 {
       font-weight: 200;
       color: #555;
-      font-size: 35px;
       letter-spacing: 1px;
       text-transform: uppercase;
       font-family: "Source Sans Pro", sans-serif;
@@ -169,6 +289,82 @@ export default {
       font-family: "Source Sans Pro", sans-serif;
     }
   }
+
+  // Manage
+  .manage {
+    width: 100%;
+    background: #ffffff;
+    h1 {
+      font-weight: 200;
+      color: #555;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-family: "Source Sans Pro", sans-serif;
+    }
+    p {
+      font-weight: 200;
+      color: #555;
+      font-size: 20px;
+      margin-bottom: 60px;
+      font-family: "Source Sans Pro", sans-serif;
+    }
+  }
+
+  // Custom need
+  .links-container {
+    .card {
+      .custom-content {
+        color: #0065ff;
+        cursor: pointer;
+        .custom-boder {
+          width: 45px;
+          height: 45px;
+          margin: auto;
+          border: 2px solid #0065ff;
+          border-radius: 25px;
+          transition: 0.3s;
+          i {
+            font-size: 20px;
+            padding: 5px;
+            transition: 0.3s;
+          }
+        }
+        h6 {
+          cursor: pointer;
+          font-weight: 600;
+          font-size: 18px;
+          font-family: "Source Sans Pro", sans-serif;
+          transition: 0.3s;
+        }
+      }
+      p {
+        color: rgba(0, 0, 0, 0.945);
+        font-size: 16px;
+        line-height: 1.6rem;
+      }
+    }
+    .card:hover .custom-content {
+      color: #000;
+    }
+    .card:hover .custom-content .custom-boder {
+      border: 2px solid #000;
+    }
+  }
+
+  // Happy paitient
+  .happy-paitients {
+    width: 100%;
+    overflow: hidden;
+     margin-top: 20px;
+    .btn {
+      color: #ffffff;
+      font-weight: 600;
+      background: #0050ff;
+      border-radius: 25px;
+      padding: 8px 25px;
+      font-family: "Source Sans Pro", sans-serif;
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -183,9 +379,42 @@ export default {
       }
     }
   }
+  .custom-need-section {
+    h1 {
+      font-size: 25px;
+    }
+  }
   .approce {
     p {
       width: 85%;
+    }
+  }
+  .manage {
+    padding-top: 70px;
+    h1 {
+      font-size: 25px;
+    }
+  }
+  .happy-paitients {
+    .custom-overlay {
+      width: 100%;
+      min-height: 100px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      text-align: center;
+      border-top: 1px solid #dfdfdf75;
+      h1 {
+        font-weight: 200;
+        font-size: 25px;
+        font-family: "Source Sans Pro", sans-serif;
+      }
+      p {
+        font-weight: 200;
+        font-size: 17px;
+        line-height: 1.8rem;
+        color: #000;
+        font-family: "Source Sans Pro", sans-serif;
+      }
     }
   }
 }
@@ -199,11 +428,52 @@ export default {
       }
     }
   }
-
+  .custom-need-section {
+    h1 {
+      font-size: 30px;
+    }
+  }
   .approce {
     p {
       width: 700px;
     }
+  }
+  .manage {
+    padding-top: 100px;
+    h1 {
+      font-size: 30px;
+    }
+  }
+  .happy-paitients {
+    height: 500px;
+    position: relative;
+    .custom-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-align: left;
+      padding-top: 15%;
+      h1 {
+        font-weight: 200;
+        font-size: 40px;
+        color: #ffffff;
+        font-family: "Source Sans Pro", sans-serif;
+      }
+      p {
+        font-weight: 200;
+        font-size: 20px;
+        line-height: 1.8rem;
+        color: #ffffff;
+        font-family: "Source Sans Pro", sans-serif;
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  .happy-paitients {
+    height: 100vh;
   }
 }
 </style>
