@@ -5,6 +5,7 @@ import Home from '../views/home/home'
 import UserRagistration from '../views/home/user-registartion'
 import UserLogin from '../views/home/user-login'
 import DoctorList from '../views/home/doctor-lists'
+import DoctorProfile from '../views/doctor/profile'
 
 Vue.use(VueRouter)
 
@@ -19,6 +20,10 @@ const routes = [
       { path: 'registration', component: UserRagistration },
       { path: 'login', component: UserLogin },
       { path: 'doctors', component: DoctorList },
+      {
+        path: 'doctor-profile/:id',
+        component: DoctorProfile
+      },
     ]
   }
 ]

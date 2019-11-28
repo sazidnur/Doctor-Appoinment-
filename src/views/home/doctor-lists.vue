@@ -38,7 +38,12 @@
       </div>
 
       <div class="row pt-2 pb-4 px-lg-3">
-        <div class="col-12 col-lg-6 doctors-column px-lg-0" v-for="(doctor, i) in doctors" :key="i">
+        <div
+          class="col-12 col-lg-6 doctors-column px-lg-0"
+          v-for="(doctor, i) in doctors"
+          :key="i"
+          v-on:click="showDoctorProfile(doctor)"
+        >
           <div class="d-flex border py-3">
             <div class="pr-2">
               <img src="../../assets/static/no-image.png" class="img-flud rounded-circle" />
@@ -72,6 +77,11 @@ export default {
   mounted() {
     for (var i = 0; i < 15; i++) {
       this.doctors = i;
+    }
+  },
+  methods: {
+    showDoctorProfile(doctor) {
+      this.$router.push({ path: "/doctor-profile/" + doctor });
     }
   }
 };
