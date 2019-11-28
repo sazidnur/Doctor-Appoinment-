@@ -3,9 +3,7 @@
     <div class="desktop-nav d-none d-lg-block">
       <div class="d-flex">
         <div>
-          <router-link to="/home">
-            <img src="../assets/static/logo.png" class="img-fluid" />
-          </router-link>
+          <img src="../assets/static/logo.png" class="img-fluid" v-on:click="goHome" />
         </div>
         <div class="ml-auto">
           <router-link to="/home">home</router-link>
@@ -54,6 +52,9 @@ export default {
     this.$refs.mobileMenu.style.top = "-100%";
   },
   methods: {
+    goHome() {
+      this.$router.push({ path: "/home" });
+    },
     openMenu() {
       this.bars = false;
       this.close = true;
@@ -76,6 +77,7 @@ export default {
     img {
       width: 40px;
       height: 40px;
+      cursor: pointer;
     }
     a {
       text-transform: uppercase;
