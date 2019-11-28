@@ -422,6 +422,7 @@ export default {
   //   User stories
   .user-stories {
     padding-top: 70px;
+    margin-bottom: 80px;
     background: #ffffff;
     h1 {
       font-weight: 200;

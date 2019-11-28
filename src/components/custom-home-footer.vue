@@ -10,9 +10,9 @@
         <div class="col-12 col-lg-4 text-center text-lg-left mb-4 mb-lg-0 links">
           <h5>Important Links</h5>
           <router-link to="/home">home</router-link>
-          <router-link to="/">sign in</router-link>
+          <router-link to="/login">login</router-link>
           <router-link to="/">doctor list</router-link>
-          <router-link to="/">registration</router-link>
+          <router-link to="/registration">registration</router-link>
         </div>
         <div class="col-12 col-lg-4 text-center text-lg-left mb-4 mb-lg-0 social-media">
           <h5 class="mb-2">Connect With Us</h5>
@@ -31,6 +31,21 @@
         </div>
       </div>
     </div>
+    <div class="dev-content py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <p>
+              All right reserved & develop by
+              <a
+                target="_blank"
+                href="https://www.facebook.com/sazidnur"
+              >Sazid Nur Ratul</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -40,11 +55,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 .homeFooter {
-  margin-top: 50px;
   padding-top: 40px;
-  padding-bottom: 25px;
+  background: #b6b5b521;
   img {
-    height: 60px;
+    height: 80px;
   }
   h5 {
     font-weight: 200;
@@ -89,6 +103,21 @@ export default {
       }
       .google:hover {
         color: #dc4e41;
+      }
+    }
+  }
+  .dev-content {
+    margin-top: 25px;
+    padding-bottom: 5px;
+    background: #a49e9e21;
+    p {
+      margin-bottom: 0;
+      font-weight: 200;
+      color: #000;
+      letter-spacing: 0.05px;
+      font-family: "Source Sans Pro", sans-serif;
+      a {
+        color: #007bff;
       }
     }
   }

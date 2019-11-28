@@ -3,11 +3,14 @@
     <div class="desktop-nav d-none d-lg-block">
       <div class="d-flex">
         <div>
-          <img src="../assets/static/logo.png" class="img-fluid" />
+          <router-link to="/home">
+            <img src="../assets/static/logo.png" class="img-fluid" />
+          </router-link>
         </div>
         <div class="ml-auto">
-          <router-link to="/home">signin</router-link>
-          <router-link to="/">regisration</router-link>
+          <router-link to="/home">home</router-link>
+          <router-link to="/login">login</router-link>
+          <router-link to="/registration">regisration</router-link>
           <router-link to="/">doctor list</router-link>
         </div>
       </div>
@@ -21,15 +24,17 @@
           <i class="fas fa-times" v-on:click="closeMenu" v-show="close"></i>
         </div>
         <div class="ml-auto">
-          <img src="../assets/static/logo.png" class="img-fluid" />
+          <router-link to="/home">
+            <img src="../assets/static/logo.png" class="img-fluid" />
+          </router-link>
         </div>
       </div>
     </div>
 
     <div class="mobile-menu d-block d-lg-none" ref="mobileMenu">
       <router-link to="/home">Home</router-link>
-      <router-link to="/">signin</router-link>
-      <router-link to="/">registration</router-link>
+      <router-link to="/login">login</router-link>
+      <router-link to="/registration">registration</router-link>
       <router-link to="/">doctor list</router-link>
     </div>
 
