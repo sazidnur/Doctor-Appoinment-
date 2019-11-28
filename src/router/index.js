@@ -4,6 +4,7 @@ import HomeRouter from '../views/home/home-routing'
 import Home from '../views/home/home'
 import UserRagistration from '../views/home/user-registartion'
 import UserLogin from '../views/home/user-login'
+import DoctorList from '../views/home/doctor-lists'
 
 Vue.use(VueRouter)
 
@@ -17,6 +18,7 @@ const routes = [
       { path: 'home', component: Home },
       { path: 'registration', component: UserRagistration },
       { path: 'login', component: UserLogin },
+      { path: 'doctors', component: DoctorList },
     ]
   }
 ]

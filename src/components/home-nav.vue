@@ -9,7 +9,7 @@
           <router-link to="/home">home</router-link>
           <router-link to="/login">login</router-link>
           <router-link to="/registration">regisration</router-link>
-          <router-link to="/">doctor list</router-link>
+          <router-link to="/doctors">doctor list</router-link>
         </div>
       </div>
     </div>
@@ -33,7 +33,7 @@
       <router-link to="/home">Home</router-link>
       <router-link to="/login">login</router-link>
       <router-link to="/registration">registration</router-link>
-      <router-link to="/">doctor list</router-link>
+      <router-link to="/doctors">doctor list</router-link>
     </div>
 
     <div class="break"></div>

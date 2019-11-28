@@ -11,7 +11,7 @@
           <h5>Important Links</h5>
           <router-link to="/home">home</router-link>
           <router-link to="/login">login</router-link>
-          <router-link to="/">doctor list</router-link>
+          <router-link to="/doctors">doctor list</router-link>
           <router-link to="/registration">registration</router-link>
         </div>
         <div class="col-12 col-lg-4 text-center text-lg-left mb-4 mb-lg-0 social-media">
