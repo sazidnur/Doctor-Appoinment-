@@ -174,6 +174,66 @@
       </div>
       <img src="../../assets/static/happy_patient.jpg" class="img-fluid" />
     </div>
+
+    <!-- User Stories -->
+    <div class="user-stories">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-7 m-auto text-center pb-5">
+            <h1 class="mb-4">User stories</h1>
+            <p>All sorts of people use Doctor Care Anywhere for all sorts of reasons. Have a read of what some our users have to say.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+            
+          <div class="col-12 col-sm-6 col-lg-4 story-column mb-3 pr-sm-2 pr-lg-3">
+            <div class="content bg-primary">
+              <div class="flex-center flex-column text-center">
+                <p>sean's story</p>
+                <h3 class="mb-0">The app is amazing for monitoring my symptoms</h3>
+              </div>
+            </div>
+            <div class="image-section">
+              <img src="../../assets/static/story1.jpg" class="img-fluid" />
+              <div class="custom-verlay"></div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 story-column mb-3 pl-sm-2 px-lg-1">
+            <div class="content bg-success">
+              <div class="flex-center flex-column text-center">
+                <p>sean's story</p>
+                <h3 class="mb-0">The app is amazing for monitoring my symptoms</h3>
+              </div>
+            </div>
+            <div class="image-section">
+              <img src="../../assets/static/story2.jpg" class="img-fluid" />
+              <div class="custom-verlay"></div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 story-column mb-3 pr-sm-2 pr-lg-3">
+            <div class="content bg-warning">
+              <div class="flex-center flex-column text-center">
+                <p>sean's story</p>
+                <h3 class="mb-0">The app is amazing for monitoring my symptoms</h3>
+              </div>
+            </div>
+            <div class="image-section">
+              <img src="../../assets/static/story3.jpg" class="img-fluid" />
+              <div class="custom-verlay"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    
   </div>
 </template>
 <script>
@@ -355,7 +415,7 @@ export default {
   .happy-paitients {
     width: 100%;
     overflow: hidden;
-     margin-top: 20px;
+    margin-top: 20px;
     .btn {
       color: #ffffff;
       font-weight: 600;
@@ -363,6 +423,60 @@ export default {
       border-radius: 25px;
       padding: 8px 25px;
       font-family: "Source Sans Pro", sans-serif;
+    }
+  }
+
+  //   User stories
+  .user-stories {
+    padding-top: 70px;
+    h1 {
+      font-weight: 200;
+      font-family: "Source Sans Pro", sans-serif;
+    }
+    p {
+      font-weight: 200;
+      line-height: 1.8rem;
+      font-family: "Source Sans Pro", sans-serif;
+    }
+    .story-column {
+      cursor: pointer;
+      .content {
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 250px;
+        p {
+          color: #ffffff;
+          font-size: 18px;
+          text-transform: uppercase;
+        }
+        h3 {
+          color: #ffffff;
+          font-weight: 200;
+          font-family: "Source Sans Pro", sans-serif;
+        }
+      }
+      .image-section {
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+        position: relative;
+        img {
+          width: 100%;
+          min-height: 100%;
+        }
+        .custom-verlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: #ffffff4d;
+          display: none;
+        }
+      }
+    }
+    .story-column:hover .image-section .custom-verlay {
+      display: block;
     }
   }
 }
@@ -417,6 +531,14 @@ export default {
       }
     }
   }
+  .user-stories {
+    h1 {
+      font-size: 25px;
+    }
+    p {
+      font-size: 17px;
+    }
+  }
 }
 @media (min-width: 768px) {
   .banner {
@@ -468,6 +590,15 @@ export default {
         color: #ffffff;
         font-family: "Source Sans Pro", sans-serif;
       }
+    }
+  }
+
+  .user-stories {
+    h1 {
+      font-size: 40px;
+    }
+    p {
+      font-size: 20px;
     }
   }
 }
