@@ -8,7 +8,7 @@
         <div class="ml-auto">
           <router-link to="/home">signin</router-link>
           <router-link to="/">regisration</router-link>
-          <router-link to="/">doctorlist</router-link>
+          <router-link to="/">doctor list</router-link>
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@
       <router-link to="/home">Home</router-link>
       <router-link to="/">signin</router-link>
       <router-link to="/">registration</router-link>
-      <router-link to="/">doctorlist</router-link>
+      <router-link to="/">doctor list</router-link>
     </div>
 
     <div class="break"></div>
@@ -67,7 +67,7 @@ export default {
   width: 100%;
   .desktop-nav {
     padding: 20px 100px;
-    background-color: none;
+    background: none;
     img {
       width: 40px;
       height: 40px;

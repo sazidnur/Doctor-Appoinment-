@@ -188,7 +188,6 @@
 
       <div class="container-fluid">
         <div class="row">
-            
           <div class="col-12 col-sm-6 col-lg-4 story-column mb-3 pr-sm-2 pr-lg-3">
             <div class="content bg-primary">
               <div class="flex-center flex-column text-center">
@@ -227,13 +226,9 @@
               <div class="custom-verlay"></div>
             </div>
           </div>
-
         </div>
       </div>
-
     </div>
-
-    
   </div>
 </template>
 <script>
@@ -243,15 +238,13 @@ export default {
 </script>
 <style lang="scss" scoped>
 .home {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("../../assets/static/banner.jpg");
+  background: url("../../assets/static/banner.jpg");
   background-size: cover;
   background-position: center;
-  height: 100vh;
   background-attachment: fixed;
   .banner {
     width: 100%;
-    background: none;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
     .banner-column {
       h1 {
         color: #ffffff;
@@ -372,6 +365,7 @@ export default {
 
   // Custom need
   .links-container {
+    padding-bottom: 20px;
     .card {
       .custom-content {
         color: #2bae66;
@@ -415,7 +409,6 @@ export default {
   .happy-paitients {
     width: 100%;
     overflow: hidden;
-    margin-top: 20px;
     .btn {
       color: #ffffff;
       font-weight: 600;
@@ -429,6 +422,7 @@ export default {
   //   User stories
   .user-stories {
     padding-top: 70px;
+    background: #ffffff;
     h1 {
       font-weight: 200;
       font-family: "Source Sans Pro", sans-serif;
@@ -510,6 +504,7 @@ export default {
     }
   }
   .happy-paitients {
+    background: #ffffff;
     .custom-overlay {
       width: 100%;
       min-height: 100px;
