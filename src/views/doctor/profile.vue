@@ -8,13 +8,14 @@
               <img src="../../assets/static/doctor.png" class="img-fluid rounded-circle" />
             </div>
           </div>
-          <div class="col-12 col-lg-6 text-center text-lg-left content-column pb-4 pb-lg-0">
+          <div class="col-12 col-lg-6 text-center text-lg-left content-column">
             <h2 class="text-capitalize">sazid nur ratul</h2>
             <h5>MBBS, FCPS (UK)</h5>
             <h6 class="text-capitalize">medicine specialist</h6>
             <h6>
               <i class="fas fa-phone mr-2 text-muted"></i>01533592610
             </h6>
+            <button type="button" class="btn rounded-0 shadow-none">Consulnt</button>
           </div>
           <div class="col-12 col-lg-6 text-center d-none d-lg-block">
             <div class="image-box rounded-circle">
@@ -72,10 +73,6 @@
         </div>
       </div>
     </div>
-
-    <!-- <div class="consult py-5 text-center">
-      <button type="button" class="btn rounded-0 shadow-none">Consulnt</button>
-    </div>-->
   </div>
 </template>
 <script>
@@ -100,6 +97,20 @@ export default {
       h6 {
         font-weight: 200;
         font-family: "Source Sans Pro", sans-serif;
+      }
+      .btn {
+        text-transform: uppercase;
+        font-weight: 200;
+        font-size: 20px;
+        color: #ffffff;
+        background: #ffc107;
+        margin-top: 15px;
+        padding: 8px 35px;
+        font-family: "Source Sans Pro", sans-serif;
+        transition: 0.3s;
+      }
+      .btn:hover {
+        background: #e9af01;
       }
     }
     .image-box {
@@ -151,22 +162,6 @@ export default {
       }
     }
   }
-
-  //   .consult {
-  //     .btn {
-  //       text-transform: uppercase;
-  //       font-weight: 200;
-  //       font-size: 20px;
-  //       color: #ffffff;
-  //       background: #ffc107;
-  //       padding: 8px 35px;
-  //       font-family: "Source Sans Pro", sans-serif;
-  //       transition: 0.3s;
-  //     }
-  //     .btn:hover{
-  //         background: #e9af01;
-  //     }
-  //   }
 }
 
 @media (max-width: 992px) {
@@ -175,6 +170,7 @@ export default {
     .content-column {
       width: 100%;
       padding-top: 35px;
+      padding-bottom: 65px;
     }
     .image-box {
       margin-top: 45px;
@@ -191,9 +187,10 @@ export default {
     .content-column {
       width: 100%;
       padding-top: 70px;
+      padding-bottom: 70px;
     }
     .image-box {
-      margin-top: 45px;
+      margin-top: 84px;
     }
 
     .information {

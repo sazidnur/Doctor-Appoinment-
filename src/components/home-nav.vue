@@ -5,7 +5,7 @@
         <div>
           <img src="../assets/static/logo.png" class="img-fluid" v-on:click="goHome" />
         </div>
-        <div class="ml-auto">
+        <div class="ml-auto mt-1">
           <router-link to="/home">home</router-link>
           <router-link to="/login">login</router-link>
           <router-link to="/registration">regisration</router-link>
@@ -74,6 +74,7 @@ export default {
   .desktop-nav {
     padding: 20px 100px;
     background: none;
+    height: 80px;
     img {
       width: 40px;
       height: 40px;
@@ -82,9 +83,7 @@ export default {
     a {
       text-transform: uppercase;
       font-size: 18px;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-bottom: 10px;
+      padding: 10px;
       color: #000;
       font-weight: 200;
       transition: 0.3s;
