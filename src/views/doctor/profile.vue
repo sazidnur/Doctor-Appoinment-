@@ -103,14 +103,14 @@ export default {
         font-weight: 200;
         font-size: 20px;
         color: #ffffff;
-        background: #ffc107;
+        background: #0050ff;
         margin-top: 15px;
         padding: 8px 35px;
         font-family: "Source Sans Pro", sans-serif;
         transition: 0.3s;
       }
       .btn:hover {
-        background: #e9af01;
+        background: #0547d6;
       }
     }
     .image-box {
