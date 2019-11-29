@@ -85,7 +85,6 @@ export default {
 }
 @media (min-width: 992px) {
   .dashboard {
-    margin-top: 41px;
     .banner {
       .content-column {
         height: 250px;
