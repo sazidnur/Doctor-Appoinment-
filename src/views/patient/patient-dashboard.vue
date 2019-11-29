@@ -1,19 +1,35 @@
 <template>
   <div class="dashboard">
     <div class="banner">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-6 col-lg-4 image-column">
-            <img src="../../assets/patients/patient.jpg" class="img-fluid" />
+      <img src="../../assets/patients/patient_banner_bg.jpg" class="img-fluid" />
+      <div class="profile-card">
+        <div class="card rounded-0 border-0 shadow">
+          <div class="custom-profile-img pb-3">
+            <img src="../../assets/patients/patient.jpg" class="img-fluid rounded-circle" />
           </div>
-          <div class="col-12 col-md-6 col-lg-8 text-center text-md-left content-column">
-            <h1 class="text-capitalize">sazid nur ratul</h1>
-            <h5 class="mb-2">Expected delivery date: 30/10/19</h5>
-            <h5 class="mb-2">Next appoinment date: 30/10/19</h5>
+          <div class="card-body text-center">
+            <h2 class="text-capitalize mb-3">sazid nur ratul</h2>
+            <p class="mb-0">Content one</p>
+            <p>Content two</p>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="custom-break"></div>
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-12">
+                <div class="card rounded-0 text-center">
+                    <div class="card-body">
+                        <p class="mb-0">custom tab</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
   </div>
 </template>
 <script>
@@ -24,56 +40,75 @@ export default {
 <style lang="scss" scoped>
 .dashboard {
   .banner {
-    .image-column {
-      overflow: hidden;
-      img {
-        min-width: 100%;
-        min-height: 100%;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .profile-card {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      .card {
+        min-height: 250px;
+        .custom-profile-img {
+          position: absolute;
+          top: -65px;
+          left: 0;
+          width: 100%;
+          text-align: center;
+          img {
+            width: 150px;
+            height: 150px;
+            margin: auto;
+          }
+        }
+        .card-body {
+          margin-top: 85px;
+          h2 {
+              font-weight: 900;
+            font-family: "Source Sans Pro", sans-serif;
+          }
+        }
       }
     }
-    .content-column {
-      h1 {
-        color: #2bae66;
-      }
-      h5 {
-        font-size: 16px;
-        font-family: "Source Sans Pro", sans-serif;
-      }
-    }
+  }
+  .container{
+      margin-bottom: 70px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .dashboard {
     .banner {
-      .image-column {
-        height: 200px;
-      }
-      .content-column {
-        height: 200px;
-        padding-top: 20px;
-        h1 {
-          font-size: 25px;
+      height: 200px;
+      .profile-card {
+        top: 100px;
+        .card {
+          width: 90vw;
+          margin: auto;
         }
       }
     }
+    .custom-break {
+      height: 175px;
+    }
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .dashboard {
     .banner {
-      .image-column {
-        height: 250px;
-      }
-      .content-column {
-        height: 250px;
-        padding-top: 45px;
-        h1 {
-          font-weight: 900;
-          font-size: 40px;
-          font-family: "Source Sans Pro", sans-serif;
+      height: 300px;
+      .profile-card {
+        top: 150px;
+        .card {
+          width: 500px;
+          margin: auto;
         }
       }
+    }
+    .custom-break {
+      height: 130px;
     }
   }
 }
@@ -86,29 +121,10 @@ export default {
 @media (min-width: 992px) {
   .dashboard {
     .banner {
-      .content-column {
-        height: 250px;
-        padding-top: 45px;
-        padding-left: 75px;
-      }
+      height: 350px;
     }
-  }
-}
-@media (min-width: 1280px) {
-  .dashboard {
-    .banner {
-      .content-column {
-        padding-left: 375px;
-      }
-    }
-  }
-}
-@media (min-width: 1440px) {
-  .dashboard {
-    .banner {
-      .content-column {
-        padding-left: 455px;
-      }
+    .custom-break {
+      height: 75px;
     }
   }
 }
