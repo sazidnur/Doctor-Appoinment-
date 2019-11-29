@@ -233,7 +233,13 @@
 </template>
 <script>
 export default {
-  name: "home"
+  name: "home",
+  data() {
+    return {};
+  },
+  mounted() {
+    window.scrollTo(0, 0);
+  }
 };
 </script>
 <style lang="scss" scoped>

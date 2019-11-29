@@ -72,8 +72,14 @@
                 <option value="doctor">Doctor</option>
               </select>
             </div>
-            <button type="submit" class="btn btn-block shadow-none">Submit</button>
+            <button type="submit" class="btn btn-block shadow-none">Create Account</button>
           </form>
+
+          <div class="text-center pt-4 links">
+            <div>
+              <router-link to="/login">Already have an account?</router-link>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -108,6 +114,9 @@ export default {
         emailLabel: true
       }
     };
+  },
+  mounted() {
+    window.scrollTo(0, 0);
   },
   methods: {
     doRegistration() {
@@ -179,6 +188,14 @@ export default {
           border-radius: 3px;
           font-weight: 600;
           letter-spacing: 0;
+        }
+      }
+      .links {
+        a {
+          font-size: 16px;
+          font-weight: 400;
+          color: #2bae66;
+          font-family: "Source Sans Pro", sans-serif;
         }
       }
     }

@@ -1,35 +1,36 @@
 <template>
-  <div class="login">
+  <div class="reset">
     <div class="flex-center flex-column">
       <div class="card border-0">
         <div class="card-header text-center">
-          <h5 class="mb-0">Login</h5>
+          <h5 class="mb-0">Forgotten password ?</h5>
         </div>
         <div class="card-body py-5 px-lg-4">
-          <form @submit.prevent="doLogin">
+          <div class="text-center">
+            <p
+              class="text-muted"
+            >Just enter your registered email address, we will send new password in your email.</p>
+          </div>
+          <form @submit.prevent="doReset">
             <div class="form-group mb-4">
-              <small class="text-muted" v-if="label.userNameLabel">Username*</small>
-              <small class="text-danger" v-if="errors.userName_err">{{errors.userName_err}}</small>
+              <small class="text-muted" v-if="label.emailLabel">Email</small>
+              <small class="text-danger" v-if="errors.email_err">{{errors.email_err}}</small>
               <input
                 type="text"
                 class="form-control shadow-none"
-                placeholder="Username"
-                v-model="logData.username"
-              />
-            </div>
-            <div class="form-group mb-4">
-              <small class="text-muted" v-if="label.passwordLabel">Password*</small>
-              <small class="text-danger" v-if="errors.password_err">{{errors.password_err}}</small>
-              <input
-                type="password"
-                class="form-control shadow-none"
-                placeholder="******"
-                v-model="logData.password"
+                placeholder="Your e-mail"
+                v-model="resetData.email"
               />
             </div>
 
-            <button type="submit" class="btn btn-block shadow-none">Submit</button>
+            <button type="submit" class="btn btn-block shadow-none">Reset Password</button>
           </form>
+
+          <div class="text-center pt-4 links">
+            <div>
+              <router-link to="/login">Login now</router-link>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -40,28 +41,28 @@ export default {
   name: "login",
   data() {
     return {
-      logData: {
-        username: "",
-        password: ""
+      resetData: {
+        email: ""
       },
       errors: {
-        userName_err: "",
-        password_err: ""
+        email_err: ""
       },
       label: {
-        userNameLabel: true,
-        passwordLabel: true
+        emailLabel: true
       }
     };
   },
+  mounted() {
+    window.scrollTo(0, 0);
+  },
   methods: {
-    doLogin() {
-      if (!this.logData.username) {
-        this.label.userNameLabel = false;
-        this.errors.userName_err = "Username is required*";
-      } else if (!this.logData.password) {
-        this.label.passwordLabel = false;
-        this.errors.password_err = "Password is required*";
+    doReset() {
+      if (!this.resetData.email) {
+        this.label.emailLabel = false;
+        this.errors.email_err = "E-mail is required*";
+      } else if (this.resetData.email.indexOf("@gmail.com") < 0) {
+        this.label.email = false;
+        this.errors.email_err = "E-mail address isn't valid*";
       } else {
         this.errors = false;
         this.label = true;
@@ -72,7 +73,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.login {
+.reset {
   background: #f5f5f5;
   padding-top: 80px;
   padding-bottom: 80px;
@@ -111,12 +112,20 @@ export default {
           letter-spacing: 0;
         }
       }
+      .links {
+        a {
+          font-size: 16px;
+          font-weight: 400;
+          color: #2bae66;
+          font-family: "Source Sans Pro", sans-serif;
+        }
+      }
     }
   }
 }
 
 @media (max-width: 576px) {
-  .login {
+  .reset {
     .custom-content {
       width: 90vw;
     }
@@ -126,7 +135,7 @@ export default {
   }
 }
 @media (min-width: 576px) {
-  .login {
+  .reset {
     .custom-content {
       width: 450px;
     }

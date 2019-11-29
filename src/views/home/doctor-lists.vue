@@ -75,6 +75,7 @@ export default {
     };
   },
   mounted() {
+    window.scrollTo(0, 0);
     for (var i = 0; i < 15; i++) {
       this.doctors = i;
     }

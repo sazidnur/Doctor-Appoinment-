@@ -15,7 +15,11 @@
             <h6>
               <i class="fas fa-phone mr-2 text-muted"></i>01533592610
             </h6>
-            <button type="button" class="btn rounded-0 shadow-none">Consulnt</button>
+            <button
+              type="button"
+              class="btn rounded-0 shadow-none"
+              v-on:click="goConsultant"
+            >Consulnt</button>
           </div>
           <div class="col-12 col-lg-6 text-center d-none d-lg-block">
             <div class="image-box rounded-circle">
@@ -77,11 +81,19 @@
 </template>
 <script>
 export default {
-  name: "profile",
+  name: "public-profile",
   data() {
     return {
       doctorId: this.$route.params.id
     };
+  },
+  mounted() {
+    window.scrollTo(0, 0);
+  },
+  methods: {
+    goConsultant() {
+      this.$router.push({ path: "/report/" + this.doctorId });
+    }
   }
 };
 </script>

@@ -2,10 +2,12 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeRouter from '../views/home/home-routing'
 import Home from '../views/home/home'
-import UserRagistration from '../views/home/user-registartion'
-import UserLogin from '../views/home/user-login'
+import UserRagistration from '../views/home/auth/user-registartion'
+import UserLogin from '../views/home/auth/user-login'
+import ResetPassword from '../views/home/auth/password-reset'
 import DoctorList from '../views/home/doctor-lists'
-import DoctorProfile from '../views/doctor/profile'
+import DoctorProfile from '../views/doctor/public-profile'
+import UserReport from '../views/doctor/user-report'
 
 Vue.use(VueRouter)
 
@@ -19,11 +21,10 @@ const routes = [
       { path: 'home', component: Home },
       { path: 'registration', component: UserRagistration },
       { path: 'login', component: UserLogin },
+      { path: 'reset', component: ResetPassword },
       { path: 'doctors', component: DoctorList },
-      {
-        path: 'doctor-profile/:id',
-        component: DoctorProfile
-      },
+      { path: 'doctor-profile/:id', component: DoctorProfile },
+      { path: 'report/:doctorid', component: UserReport },
     ]
   }
 ]
