@@ -9,6 +9,10 @@ import DoctorList from '../views/home/doctor-lists'
 import DoctorProfile from '../views/doctor/public-profile'
 import PatientReport from '../views/patient/patient-report'
 
+import PatientRouting from '../views/patient/patient-routing'
+import PatientDashboard from '../views/patient/patient-dashboard'
+import PataientProfile from '../views/patient/patient-profile'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -22,9 +26,20 @@ const routes = [
       { path: 'registration', component: UserRagistration },
       { path: 'login', component: UserLogin },
       { path: 'reset', component: ResetPassword },
+      // Doctors in public
       { path: 'doctors', component: DoctorList },
       { path: 'doctor-profile/:id', component: DoctorProfile },
       { path: 'report/:doctorid', component: PatientReport },
+      // Paitaint
+      {
+        path: 'patient',
+        component: PatientRouting,
+        children: [
+          { path: '', redirect: '/patient/dashboard' },
+          { path: 'dashboard', component: PatientDashboard },
+          { path: 'profile', component: PataientProfile },
+        ]
+      }
     ]
   }
 ]

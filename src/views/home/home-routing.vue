@@ -13,9 +13,6 @@ export default {
   components: {
     HomeNav,
     myFooter
-  },
-  data() {
-    return {};
   }
 };
 </script>
