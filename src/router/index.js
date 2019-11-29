@@ -7,7 +7,7 @@ import UserLogin from '../views/home/auth/user-login'
 import ResetPassword from '../views/home/auth/password-reset'
 import DoctorList from '../views/home/doctor-lists'
 import DoctorProfile from '../views/doctor/public-profile'
-import UserReport from '../views/doctor/user-report'
+import PatientReport from '../views/patient/patient-report'
 
 Vue.use(VueRouter)
 
@@ -24,7 +24,7 @@ const routes = [
       { path: 'reset', component: ResetPassword },
       { path: 'doctors', component: DoctorList },
       { path: 'doctor-profile/:id', component: DoctorProfile },
-      { path: 'report/:doctorid', component: UserReport },
+      { path: 'report/:doctorid', component: PatientReport },
     ]
   }
 ]

@@ -81,7 +81,7 @@
 </template>
 <script>
 export default {
-  name: "user-report",
+  name: "patient-report",
   data() {
     return {
       doctorId: this.$route.params.doctorid,
