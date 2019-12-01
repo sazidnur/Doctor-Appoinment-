@@ -204,9 +204,6 @@ export default {
 
 @media (max-width: 576px) {
   .registration {
-    .custom-content {
-      width: 90vw;
-    }
     .card {
       width: 90vw;
     }
@@ -214,9 +211,6 @@ export default {
 }
 @media (min-width: 576px) {
   .registration {
-    .custom-content {
-      width: 450px;
-    }
     .card {
       width: 450px;
       box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;

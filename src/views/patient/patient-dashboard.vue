@@ -30,13 +30,19 @@
                 to="/patient/primary-treatment"
                 type="button"
                 class="btn rounded-0 shadow-none"
-              >Primary treatment</router-link>
+              >Dashboard</router-link>
 
               <router-link
                 to="/patient/prescription"
                 type="button"
                 class="btn rounded-0 shadow-none"
               >Prescription</router-link>
+
+              <router-link
+                to="/patient/risk"
+                type="button"
+                class="btn rounded-0 shadow-none"
+              >Risk analysis</router-link>
 
               <router-link to="/doctors" type="button" class="btn rounded-0 shadow-none">Consult</router-link>
 

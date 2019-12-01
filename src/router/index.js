@@ -12,10 +12,17 @@ import PatientReport from '../views/patient/patient-report'
 import PatientDashboard from '../views/patient/patient-dashboard'
 import PrimaryTreatment from '../views/patient/primary-treatment'
 import PatientPrescription from '../views/patient/prescription'
+import PatientRiskAnalysis from '../views/patient/risk-analysis'
 import PatientNotification from '../views/patient/notifications'
 import PatientReportSubmit from '../views/patient/report-submit'
 import PataientProfile from '../views/patient/patient-profile'
 import PatientDoctorChatBox from '../views/chat/chat-box'
+
+import DoctorPrivateProfile from '../views/doctor/private-profile'
+import DoctorDashboard from '../views/doctor/doctor-dashboard'
+import DoctorConsultation from '../views/doctor/consultation'
+import DoctorPatients from '../views/doctor/patients'
+import DoctorProfileEdit from '../views/doctor/edit-profile'
 
 Vue.use(VueRouter)
 
@@ -42,9 +49,22 @@ const routes = [
           { path: '', redirect: '/patient/primary-treatment' },
           { path: 'primary-treatment', component: PrimaryTreatment },
           { path: 'prescription', component: PatientPrescription },
+          { path: 'risk', component: PatientRiskAnalysis },
           { path: 'notification', component: PatientNotification },
           { path: 'report-submit', component: PatientReportSubmit },
           { path: 'profile', component: PataientProfile }
+        ]
+      },
+      // Doctor
+      {
+        path: 'doctor',
+        component: DoctorPrivateProfile,
+        children: [
+          { path: '', redirect: '/doctor/dashboard' },
+          { path: 'dashboard', component: DoctorDashboard },
+          { path: 'consultation', component: DoctorConsultation },
+          { path: 'patients', component: DoctorPatients },
+          { path: 'edit', component: DoctorProfileEdit },
         ]
       }
     ]
