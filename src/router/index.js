@@ -9,9 +9,12 @@ import DoctorList from '../views/home/doctor-lists'
 import DoctorProfile from '../views/doctor/public-profile'
 import PatientReport from '../views/patient/patient-report'
 
-import PatientRouting from '../views/patient/patient-routing'
 import PatientDashboard from '../views/patient/patient-dashboard'
+import PrimaryTreatment from '../views/patient/primary-treatment'
+import PatientNotification from '../views/patient/notifications'
+import PatientReportSubmit from '../views/patient/report-submit'
 import PataientProfile from '../views/patient/patient-profile'
+import PatientDoctorChatBox from '../views/chat/chat-box'
 
 Vue.use(VueRouter)
 
@@ -33,15 +36,18 @@ const routes = [
       // Paitaint
       {
         path: 'patient',
-        component: PatientRouting,
+        component: PatientDashboard,
         children: [
-          { path: '', redirect: '/patient/dashboard' },
-          { path: 'dashboard', component: PatientDashboard },
-          { path: 'profile', component: PataientProfile },
+          { path: '', redirect: '/patient/primary-treatment' },
+          { path: 'primary-treatment', component: PrimaryTreatment },
+          { path: 'notification', component: PatientNotification },
+          { path: 'report-submit', component: PatientReportSubmit },
+          { path: 'profile', component: PataientProfile }
         ]
       }
     ]
-  }
+  },
+  { path: '/chat/:doctorid', component: PatientDoctorChatBox }
 ]
 
 const router = new VueRouter({

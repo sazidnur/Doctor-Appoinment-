@@ -5,12 +5,12 @@
       <div class="profile-card">
         <div class="card rounded-0 border-0 shadow">
           <div class="custom-profile-img pb-3">
-            <img src="../../assets/patients/patient.jpg" class="img-fluid rounded-circle" />
+            <img src="../../assets/patients/sazid.jpg" class="img-fluid rounded-circle" />
           </div>
           <div class="card-body text-center">
             <h2 class="text-capitalize mb-3">sazid nur ratul</h2>
-            <p class="mb-0">Content one</p>
-            <p>Content two</p>
+            <p class="mb-0">Running week 4</p>
+            <p>Expected delivery date: <span class="text-success font-weight-bold">02 Aug 2020</span></p>
           </div>
         </div>
       </div>
@@ -19,17 +19,46 @@
     <div class="custom-break"></div>
 
     <div class="container mt-3">
-        <div class="row">
-            <div class="col-12">
-                <div class="card rounded-0 text-center">
-                    <div class="card-body">
-                        <p class="mb-0">custom tab</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+      <div class="row">
+        <div class="col-12 px-0">
+          <div class="card rounded-0 text-center custom-tab border-0">
+            <div class="custom-felx-center">
+              <router-link
+                to="/patient/primary-treatment"
+                type="button"
+                class="btn rounded-0 shadow-none"
+              >Primary treatment</router-link>
 
+              <router-link to="/doctors" type="button" class="btn rounded-0 shadow-none">Consult</router-link>
+
+              <router-link
+                to="/patient/notification"
+                type="button"
+                class="btn rounded-0 shadow-none"
+              >Notifications</router-link>
+
+              <router-link
+                to="/patient/report-submit"
+                type="button"
+                class="btn rounded-0 shadow-none"
+              >Report submit</router-link>
+
+              <router-link
+                to="/patient/profile"
+                type="button"
+                class="btn rounded-0 shadow-none"
+              >Edit Profile</router-link>
+            </div>
+
+            <div class="card-body pl-lg-1 pr-lg-0 text-left">
+              <div class="pt-3 pt-lg-5">
+                <router-view></router-view>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -66,15 +95,31 @@ export default {
         .card-body {
           margin-top: 85px;
           h2 {
-              font-weight: 900;
+            font-weight: 900;
             font-family: "Source Sans Pro", sans-serif;
           }
         }
       }
     }
   }
-  .container{
-      margin-bottom: 70px;
+  .container {
+    margin-bottom: 70px;
+    .custom-tab {
+      .btn {
+        border: 0;
+        font-size: 18px;
+        font-weight: 200;
+        color: #ffffff;
+        background: #0050ff;
+        transition: 0.3s;
+        font-family: "Source Sans Pro", sans-serif;
+      }
+      .router-link-exact-active {
+        border: 0;
+        opacity: 0.4;
+        background: #0050ff;
+      }
+    }
   }
 }
 
@@ -116,6 +161,16 @@ export default {
 @media (max-width: 992px) {
   .dashboard {
     margin-top: 41px;
+    .container {
+      .custom-tab {
+        text-align: center;
+        .btn {
+          margin-bottom: 5px;
+          width: 250px;
+          margin-left: 5px;
+        }
+      }
+    }
   }
 }
 @media (min-width: 992px) {
@@ -125,6 +180,18 @@ export default {
     }
     .custom-break {
       height: 75px;
+    }
+    .container {
+      .custom-tab {
+        .custom-felx-center {
+          justify-content: center !important;
+          display: flex !important;
+          .btn {
+            width: 250px;
+            margin-left: 5px;
+          }
+        }
+      }
     }
   }
 }
