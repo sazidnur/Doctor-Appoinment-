@@ -11,6 +11,7 @@ import PatientReport from '../views/patient/patient-report'
 
 import PatientDashboard from '../views/patient/patient-dashboard'
 import PrimaryTreatment from '../views/patient/primary-treatment'
+import PatientPrescription from '../views/patient/prescription'
 import PatientNotification from '../views/patient/notifications'
 import PatientReportSubmit from '../views/patient/report-submit'
 import PataientProfile from '../views/patient/patient-profile'
@@ -40,6 +41,7 @@ const routes = [
         children: [
           { path: '', redirect: '/patient/primary-treatment' },
           { path: 'primary-treatment', component: PrimaryTreatment },
+          { path: 'prescription', component: PatientPrescription },
           { path: 'notification', component: PatientNotification },
           { path: 'report-submit', component: PatientReportSubmit },
           { path: 'profile', component: PataientProfile }

@@ -85,8 +85,8 @@ export default {
 }
 
 @media (max-width: 992px) {
-.chat{
-  .chat-card {
+  .chat {
+    .chat-card {
       position: fixed;
       top: 64px;
       bottom: 50px;
@@ -102,7 +102,7 @@ export default {
       width: 100%;
       background: none;
     }
-}
+  }
 }
 @media (min-width: 992px) {
   .chat {

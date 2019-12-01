@@ -10,7 +10,10 @@
           <div class="card-body text-center">
             <h2 class="text-capitalize mb-3">sazid nur ratul</h2>
             <p class="mb-0">Running week 4</p>
-            <p>Expected delivery date: <span class="text-success font-weight-bold">02 Aug 2020</span></p>
+            <p>
+              Expected delivery date:
+              <span class="text-success font-weight-bold">02 Aug 2020</span>
+            </p>
           </div>
         </div>
       </div>
@@ -28,6 +31,12 @@
                 type="button"
                 class="btn rounded-0 shadow-none"
               >Primary treatment</router-link>
+
+              <router-link
+                to="/patient/prescription"
+                type="button"
+                class="btn rounded-0 shadow-none"
+              >Prescription</router-link>
 
               <router-link to="/doctors" type="button" class="btn rounded-0 shadow-none">Consult</router-link>
 
