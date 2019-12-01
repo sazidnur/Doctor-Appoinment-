@@ -51,7 +51,7 @@
     </div>
 
     <div class="reciver-profile border-left d-none d-lg-block">
-      <img src="../../assets/patients/sazid.jpg" class="rounded-circle mb-3" />
+      <img src="../../assets/patients/mamun.jpg" class="rounded-circle mb-3" />
       <h5 class="text-capitalize">abdullah al mamun</h5>
     </div>
   </div>
