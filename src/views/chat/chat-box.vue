@@ -235,6 +235,7 @@ export default {
         margin-bottom: 10px;
         background: #dfdfdf50;
         border-radius: 3px;
+        width: 60%;
       }
       img {
         width: 50px;
@@ -243,11 +244,18 @@ export default {
       small {
         font-size: 12px;
       }
+      h6{
+        font-size: 18px;
+        font-weight: 600;
+        color: #555;
+      }
       p {
-        font-size: 13px;
+        font-size: 16px;
         margin-bottom: 0;
       }
       .patient-box {
+        width: 60%;
+        float: right;
         margin-bottom: 10px;
       }
     }
