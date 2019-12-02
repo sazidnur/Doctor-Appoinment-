@@ -23,6 +23,8 @@ import DoctorDashboard from '../views/doctor/doctor-dashboard'
 import DoctorConsultation from '../views/doctor/consultation'
 import DoctorPatients from '../views/doctor/patients'
 import DoctorProfileEdit from '../views/doctor/edit-profile'
+import DoctorPrescriptionMake from '../views/doctor/make-prescription'
+
 
 Vue.use(VueRouter)
 
@@ -64,11 +66,12 @@ const routes = [
           { path: 'dashboard', component: DoctorDashboard },
           { path: 'consultation', component: DoctorConsultation },
           { path: 'patients', component: DoctorPatients },
-          { path: 'edit', component: DoctorProfileEdit },
+          { path: 'edit', component: DoctorProfileEdit }
         ]
       }
     ]
   },
+  { path: '/start-consulnt/:patientid', component: DoctorPrescriptionMake },
   { path: '/chat/:doctorid', component: PatientDoctorChatBox }
 ]
 

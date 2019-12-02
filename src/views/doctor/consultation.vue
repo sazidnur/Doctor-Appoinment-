@@ -3,7 +3,12 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div class="d-flex border-bottom" v-for="(request, i) in requests" :key="i">
+          <div
+            class="d-flex border-bottom"
+            v-for="(request, i) in requests"
+            :key="i"
+            v-on:click="goConsult(request)"
+          >
             <div class="px-2 py-3 w-100">
               <h5 class="mb-0 text-capitalize">abdullah al mamun</h5>
               <small>
@@ -32,6 +37,11 @@ export default {
   mounted() {
     for (var i = 0; i < 11; i++) {
       this.requests = i;
+    }
+  },
+  methods: {
+    goConsult(request) {
+      this.$router.push({ path: "/start-consulnt/" + request });
     }
   }
 };
