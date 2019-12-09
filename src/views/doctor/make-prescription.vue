@@ -1,6 +1,13 @@
 <template>
     <div class="prescription">
-        <h1>Prescription</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3>Patient Info.</h3>
+                    <h5 class="text-capitalize mb-0"></h5>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 <script>

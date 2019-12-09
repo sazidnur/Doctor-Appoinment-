@@ -25,6 +25,10 @@ import DoctorPatients from '../views/doctor/patients'
 import DoctorProfileEdit from '../views/doctor/edit-profile'
 import DoctorPrescriptionMake from '../views/doctor/make-prescription'
 
+import AdminLogin from '../views/admin/login'
+import AdminRouting from '../views/admin/menu/admin-routing'
+import AdminDashboard from '../views/admin/menu/dashboard'
+
 
 Vue.use(VueRouter)
 
@@ -47,6 +51,13 @@ const routes = [
       {
         path: 'patient',
         component: PatientDashboard,
+        beforeEnter: (to, from, next) => {
+          if (localStorage.getItem('token')) {
+            next()
+          } else {
+            next('/login')
+          }
+        },
         children: [
           { path: '', redirect: '/patient/primary-treatment' },
           { path: 'primary-treatment', component: PrimaryTreatment },
@@ -61,6 +72,13 @@ const routes = [
       {
         path: 'doctor',
         component: DoctorPrivateProfile,
+        beforeEnter: (to, from, next) => {
+          if (localStorage.getItem('token')) {
+            next()
+          } else {
+            next('/login')
+          }
+        },
         children: [
           { path: '', redirect: '/doctor/dashboard' },
           { path: 'dashboard', component: DoctorDashboard },
@@ -71,8 +89,45 @@ const routes = [
       }
     ]
   },
-  { path: '/start-consulnt/:patientid', component: DoctorPrescriptionMake },
-  { path: '/chat/:doctorid', component: PatientDoctorChatBox }
+  {
+    path: '/start-consulnt/:patientid',
+    component: DoctorPrescriptionMake,
+    beforeEnter: (to, from, next) => {
+      if (localStorage.getItem('token')) {
+        next()
+      } else {
+        next('/login')
+      }
+    },
+  },
+  {
+    path: '/chat/:doctorid',
+    component: PatientDoctorChatBox,
+    beforeEnter: (to, from, next) => {
+      if (localStorage.getItem('token')) {
+        next()
+      } else {
+        next('/login')
+      }
+    }
+  },
+  // Admin
+  { path: '/admin', component: AdminLogin },
+  {
+    path: '/menu',
+    component: AdminRouting,
+    beforeEnter: (to, from, next) => {
+      if (localStorage.getItem('token')) {
+        next()
+      } else {
+        next('/admin')
+      }
+    },
+    children: [
+      { path: '', redirect: '/menu/dashboard' },
+      { path: 'dashboard', component: AdminDashboard }
+    ]
+  }
 ]
 
 const router = new VueRouter({

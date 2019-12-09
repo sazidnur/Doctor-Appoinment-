@@ -1,80 +1,102 @@
 <template>
   <div class="registration">
-    <div class="flex-center flex-column">
-      <div class="card border-0">
-        <div class="card-header text-center">
-          <h5 class="mb-0">Registration</h5>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 px-0 px-lg-3">
+          <div class="card border-0">
+            <div class="card-header text-center">
+              <h5 class="mb-0">Registration</h5>
+            </div>
+            <div class="card-body">
+              <form @submit.prevent="doRegistration">
+                <div class="row">
+                  <div class="col-12 col-lg-6">
+                    <div class="form-group mb-3 mb-lg-4">
+                      <small class="text-muted" v-if="label.fullNameLabel">Full name*</small>
+                      <small class="text-danger" v-if="errors.fullName_err">{{errors.fullName_err}}</small>
+                      <input
+                        type="text"
+                        class="form-control shadow-none"
+                        placeholder="Your name"
+                        v-model="regData.fullName"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <div class="form-group mb-3 mb-lg-4">
+                      <small class="text-muted" v-if="label.userNameLabel">Username*</small>
+                      <small class="text-danger" v-if="errors.userName_err">{{errors.userName_err}}</small>
+                      <input
+                        type="text"
+                        class="form-control shadow-none"
+                        placeholder="Username"
+                        v-model="regData.username"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <div class="form-group mb-3 mb-lg-4">
+                      <small class="text-muted" v-if="label.passwordLabel">Password*</small>
+                      <small class="text-danger" v-if="errors.password_err">{{errors.password_err}}</small>
+                      <input
+                        type="password"
+                        class="form-control shadow-none"
+                        placeholder="******"
+                        v-model="regData.password"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <div class="form-group mb-3 mb-lg-4">
+                      <small class="text-muted" v-if="label.phoneLabel">Phone*</small>
+                      <small class="text-danger" v-if="errors.phone_err">{{errors.phone_err}}</small>
+                      <input
+                        type="number"
+                        class="form-control shadow-none"
+                        placeholder="01xxxxxxxxx"
+                        v-model="regData.phone"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <div class="form-group mb-3 mb-lg-4">
+                      <small class="text-muted" v-if="label.emailLabel">E-mail*</small>
+                      <small class="text-danger" v-if="errors.email_err">{{errors.email_err}}</small>
+                      <input
+                        type="email"
+                        class="form-control shadow-none"
+                        placeholder="E-mail address"
+                        v-model="regData.email"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <div class="form-group mb-3 mb-lg-4">
+                      <small class="text-muted">Address</small>
+                      <input
+                        type="text"
+                        class="form-control shadow-none"
+                        placeholder="Current address"
+                        v-model="regData.address"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group mb-3 mb-lg-4">
+                      <small class="text-muted">Who are you?</small>
+                      <select class="form-control shadow-none" v-model="regData.userType">
+                        <option value="patient">Patient</option>
+                        <option value="doctor">Doctor</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-block shadow-none">Create Account</button>
+              </form>
+            </div>
+          </div>
         </div>
-        <div class="card-body py-5 px-lg-4">
-          <form @submit.prevent="doRegistration">
-            <div class="form-group mb-4">
-              <small class="text-muted" v-if="label.fullNameLabel">Full name*</small>
-              <small class="text-danger" v-if="errors.fullName_err">{{errors.fullName_err}}</small>
-              <input
-                type="text"
-                class="form-control shadow-none"
-                placeholder="Your name"
-                v-model="regData.fullName"
-              />
-            </div>
-            <div class="form-group mb-4">
-              <small class="text-muted" v-if="label.userNameLabel">Username*</small>
-              <small class="text-danger" v-if="errors.userName_err">{{errors.userName_err}}</small>
-              <input
-                type="text"
-                class="form-control shadow-none"
-                placeholder="Username"
-                v-model="regData.username"
-              />
-            </div>
-            <div class="form-group mb-4">
-              <small class="text-muted" v-if="label.passwordLabel">Password*</small>
-              <small class="text-danger" v-if="errors.password_err">{{errors.password_err}}</small>
-              <input
-                type="password"
-                class="form-control shadow-none"
-                placeholder="******"
-                v-model="regData.password"
-              />
-            </div>
-            <div class="form-group mb-4">
-              <small class="text-muted" v-if="label.phoneLabel">Phone*</small>
-              <small class="text-danger" v-if="errors.phone_err">{{errors.phone_err}}</small>
-              <input
-                type="number"
-                class="form-control shadow-none"
-                placeholder="01xxxxxxxxx"
-                v-model="regData.phone"
-              />
-            </div>
-            <div class="form-group mb-4">
-              <small class="text-muted">Email</small>
-              <input
-                type="email"
-                class="form-control shadow-none"
-                placeholder="E-mail address"
-                v-model="regData.email"
-              />
-            </div>
-            <div class="form-group mb-4">
-              <small class="text-muted">Address</small>
-              <input
-                type="text"
-                class="form-control shadow-none"
-                placeholder="Current address"
-                v-model="regData.address"
-              />
-            </div>
-            <div class="form-group mb-4">
-              <small class="text-muted">Who are you?</small>
-              <select class="form-control shadow-none" v-model="regData.userType">
-                <option value="patient">Patient</option>
-                <option value="doctor">Doctor</option>
-              </select>
-            </div>
-            <button type="submit" class="btn btn-block shadow-none">Create Account</button>
-          </form>
-
+        <div class="col-12">
           <div class="text-center pt-4 links">
             <div>
               <router-link to="/login">Already have an account?</router-link>
@@ -141,6 +163,11 @@ export default {
       } else if (this.regData.phone.length > 11) {
         this.label.phoneLabel = false;
         this.errors.phone_err = "Phone number isn't valid*";
+      } else if (!this.regData.email) {
+        this.label.emailLabel = false;
+        this.errors.email_err = "E-mail is required*";
+      } else if (this.regData.email.indexOf("@gmail.com") < 0) {
+        this.errors.email_err = "E-mail isn't valid*";
       } else {
         this.errors = false;
         this.label = true;
@@ -153,14 +180,14 @@ export default {
 <style lang="scss" scoped>
 .registration {
   background: #f5f5f5;
-  padding-top: 80px;
-  padding-bottom: 80px;
   .card {
+    // width: 90vw;
+    background: none;
     .card-header {
       padding-top: 30px;
       padding-bottom: 30px;
       background: none;
-      border-bottom: 2px solid #dfdfdf;
+      border: 0;
       h5 {
         font-weight: 600;
         color: #555;
@@ -178,6 +205,7 @@ export default {
         .form-control {
           font-weight: 200;
           border-radius: 3px;
+          height: 43px;
         }
         .form-control:focus {
           border: 1px solid #2bae66;
@@ -188,33 +216,31 @@ export default {
           border-radius: 3px;
           font-weight: 600;
           letter-spacing: 0;
+          height: 43px;
         }
       }
-      .links {
-        a {
-          font-size: 16px;
-          font-weight: 400;
-          color: #2bae66;
-          font-family: "Source Sans Pro", sans-serif;
-        }
-      }
+    }
+  }
+  .links {
+    a {
+      font-size: 16px;
+      font-weight: 400;
+      color: #2bae66;
+      font-family: "Source Sans Pro", sans-serif;
     }
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 992px) {
   .registration {
-    .card {
-      width: 90vw;
-    }
+    padding-top: 41px;
+    padding-bottom: 40px;
   }
 }
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   .registration {
-    .card {
-      width: 450px;
-      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
-    }
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 }
 </style>
