@@ -29,6 +29,7 @@ import AdminLogin from '../views/admin/login'
 import AdminRouting from '../views/admin/menu/admin-routing'
 import AdminDashboard from '../views/admin/menu/dashboard'
 import DoctorAccountRequests from '../views/admin/menu/doctor/approve-requests'
+import CreateAdmin from '../views/admin/menu/new-admin/create-admin'
 
 
 Vue.use(VueRouter)
@@ -128,6 +129,7 @@ const routes = [
       { path: '', redirect: '/menu/dashboard' },
       { path: 'dashboard', component: AdminDashboard },
       { path: 'requests/:type', component: DoctorAccountRequests },
+      { path: 'create-admin', component: CreateAdmin }
     ]
   }
 ]

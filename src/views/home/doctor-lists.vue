@@ -49,7 +49,7 @@
               <img src="../../assets/static/no-image.png" class="img-flud rounded-circle" />
             </div>
             <div class="pl-2">
-              <h6 class="mb-0 text-capitalize">sazid nur ratul</h6>
+              <h6 class="mb-0 text-capitalize">{{doctor.fullname}}</h6>
               <p class="mb-0">MBBS, FCPS</p>
               <p class="mb-0 text-capitalize">Medicine</p>
             </div>
@@ -76,13 +76,13 @@ export default {
   },
   mounted() {
     window.scrollTo(0, 0);
-    for (var i = 0; i < 15; i++) {
-      this.doctors = i;
-    }
+    this.$axios.get(`${this.$patient_api}all-doctor`).then(res => {
+      this.doctors = res.data.doctors;
+    });
   },
   methods: {
     showDoctorProfile(doctor) {
-      this.$router.push({ path: "/doctor-profile/" + doctor });
+      this.$router.push({ path: "/doctor-profile/" + doctor._id });
     }
   }
 };

@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard">
-    <div class="banner">
+    <div class="banner" v-if="patient">
       <img src="../../assets/patients/patient_banner_bg.jpg" class="img-fluid" />
       <div class="profile-card">
         <div class="card rounded-0 border-0 shadow">
@@ -8,7 +8,7 @@
             <img src="../../assets/patients/sazid.jpg" class="img-fluid rounded-circle" />
           </div>
           <div class="card-body text-center">
-            <h2 class="text-capitalize mb-3">sazid nur ratul</h2>
+            <h2 class="text-capitalize mb-3">{{patient.fullname}}</h2>
             <p class="mb-0">Running week 4</p>
             <p>
               Expected delivery date:
@@ -81,7 +81,17 @@
 export default {
   name: "patient-dashboard",
   data() {
-    return {};
+    return {
+      patient: "",
+      patientId: localStorage.getItem("id")
+    };
+  },
+  mounted() {
+    this.$axios
+      .get(`${this.$patient_api}logged-patient/` + this.patientId)
+      .then(res => {
+        this.patient = res.data.patient;
+      });
   },
   methods: {
     logout() {

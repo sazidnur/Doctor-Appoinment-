@@ -1,6 +1,6 @@
 <template>
   <div class="profile">
-    <div class="banner">
+    <div class="banner" v-if="doctor">
       <div class="container">
         <div class="row">
           <div class="col-12 col-lg-6 text-center d-block d-lg-none pt-4">
@@ -9,11 +9,11 @@
             </div>
           </div>
           <div class="col-12 col-lg-6 text-center text-lg-left content-column">
-            <h2 class="text-capitalize">sazid nur ratul</h2>
+            <h2 class="text-capitalize">{{doctor.fullname}}</h2>
             <h5>MBBS, FCPS (UK)</h5>
             <h6 class="text-capitalize">medicine specialist</h6>
             <h6>
-              <i class="fas fa-phone mr-2 text-muted"></i>01533592610
+              <i class="fas fa-phone mr-2 text-muted"></i>{{doctor.phone}}
             </h6>
           </div>
           <div class="col-12 col-lg-6 text-center d-none d-lg-block">
@@ -70,13 +70,23 @@
 <script>
 export default {
   name: "private-profile",
-  data(){
-    return{}
+  data() {
+    return {
+      doctor: "",
+      doctorId: localStorage.getItem("id")
+    };
+  },
+  mounted() {
+    this.$axios
+      .get(`${this.$doctor_api}logged-doctor/` + this.doctorId)
+      .then(res => {
+        this.doctor = res.data.doctor;
+      });
   },
   methods: {
-    logout(){
+    logout() {
       localStorage.clear();
-      this.$router.push({ path: '/login' })
+      this.$router.push({ path: "/login" });
     }
   }
 };
