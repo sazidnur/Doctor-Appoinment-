@@ -171,7 +171,53 @@ export default {
       } else {
         this.errors = false;
         this.label = true;
-        console.log(this.regData);
+        if (this.regData.userType == "doctor") {
+          this.$axios
+            .post(`${this.$doctor_api}create-account`, this.regData)
+            .then(res => {
+              if (res.status === 200) {
+                this.$fire({
+                  title: "Failed",
+                  text:
+                    "This account already created. Try to another e-mail or contact.",
+                  type: "warning",
+                  timer: 3000
+                });
+              }
+              if (res.status === 201) {
+                this.$fire({
+                  title: "Successfully",
+                  text:
+                    "Account request send to admin, we will inform into your e-mail.",
+                  type: "success",
+                  timer: 3000
+                });
+              }
+            });
+        } else {
+          this.$axios
+            .post(`${this.$patient_api}create-account`, this.regData)
+            .then(res => {
+              if (res.status === 200) {
+                this.$fire({
+                  title: "Failed",
+                  text:
+                    "This account already created. Try to another e-mail or contact.",
+                  type: "warning",
+                  timer: 3000
+                });
+              }
+              if (res.status === 201) {
+                this.$fire({
+                  title: "Successfully",
+                  text:
+                    "Account request send to admin, we will inform into your e-mail.",
+                  type: "success",
+                  timer: 3000
+                });
+              }
+            });
+        }
       }
     }
   }

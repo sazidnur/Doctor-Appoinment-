@@ -63,6 +63,7 @@
                 type="button"
                 class="btn rounded-0 shadow-none"
               >Edit Profile</router-link>
+              <a v-on:click="logout" class="btn rounded-0 shadow-none">Logout</a>
             </div>
 
             <div class="card-body pl-lg-1 pr-lg-0 text-left">
@@ -78,7 +79,16 @@
 </template>
 <script>
 export default {
-  name: "patient-dashboard"
+  name: "patient-dashboard",
+  data() {
+    return {};
+  },
+  methods: {
+    logout() {
+      localStorage.clear();
+      this.$router.push({ path: "/login" });
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

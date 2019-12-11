@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="dev-content py-3">
-      <div class="container">
+      <!-- <div class="container">
         <div class="row">
           <div class="col-12 text-center">
             <p>
@@ -44,7 +44,7 @@
             </p>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -109,7 +109,7 @@ export default {
   .dev-content {
     margin-top: 25px;
     padding-bottom: 5px;
-    background: #a49e9e21;
+    // background: #a49e9e21;
     p {
       margin-bottom: 0;
       font-weight: 200;

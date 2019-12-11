@@ -54,6 +54,9 @@
                   class="btn rounded-0 shadow-none border-right"
                 >Profile</router-link>
               </div>
+              <div>
+                <a v-on:click="logout" class="btn rounded-0 shadow-none border-right">Logout</a>
+              </div>
             </div>
           </div>
         </div>
@@ -66,7 +69,16 @@
 </template>
 <script>
 export default {
-  name: "private-profile"
+  name: "private-profile",
+  data(){
+    return{}
+  },
+  methods: {
+    logout(){
+      localStorage.clear();
+      this.$router.push({ path: '/login' })
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

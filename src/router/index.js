@@ -28,6 +28,7 @@ import DoctorPrescriptionMake from '../views/doctor/make-prescription'
 import AdminLogin from '../views/admin/login'
 import AdminRouting from '../views/admin/menu/admin-routing'
 import AdminDashboard from '../views/admin/menu/dashboard'
+import DoctorAccountRequests from '../views/admin/menu/doctor/approve-requests'
 
 
 Vue.use(VueRouter)
@@ -125,7 +126,8 @@ const routes = [
     },
     children: [
       { path: '', redirect: '/menu/dashboard' },
-      { path: 'dashboard', component: AdminDashboard }
+      { path: 'dashboard', component: AdminDashboard },
+      { path: 'requests/:type', component: DoctorAccountRequests },
     ]
   }
 ]

@@ -26,7 +26,9 @@
       </div>
     </div>
     <div class="break"></div>
-    <router-view></router-view>
+    <div class="router">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 <script>

@@ -28,6 +28,14 @@
               />
             </div>
 
+            <div class="form-group mb-4">
+              <small class="text-muted">Who are you?</small>
+              <select class="form-control shadow-none" v-model="logData.userType">
+                <option value="patient">Patient</option>
+                <option value="doctor">Doctor</option>
+              </select>
+            </div>
+
             <button type="submit" class="btn btn-block shadow-none">Login</button>
           </form>
 
@@ -51,7 +59,8 @@ export default {
     return {
       logData: {
         username: "",
-        password: ""
+        password: "",
+        userType: "patient"
       },
       errors: {
         userName_err: "",
@@ -77,7 +86,27 @@ export default {
       } else {
         this.errors = false;
         this.label = true;
-        console.log(this.logData);
+        this.$axios.post(`${this.$login_api}login`, this.logData).then(res => {
+          if (res.status == 204) {
+            this.$fire({
+              title: "Failed",
+              text: "Username or Password incorrect !!",
+              type: "warning",
+              timer: 3000
+            });
+          }
+          if (res.status == 200) {
+            localStorage.setItem("token", res.data.token);
+            localStorage.setItem("id", res.data.id);
+            localStorage.setItem("type", res.data.type);
+            if (res.data.type == "doctor") {
+              this.$router.push({ path: "/doctor" });
+            }
+            if (res.data.type == "patient") {
+              this.$router.push({ path: "/patient" });
+            }
+          }
+        });
       }
     }
   }
