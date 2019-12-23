@@ -10,12 +10,12 @@
             v-on:click="goConsult(request)"
           >
             <div class="px-2 py-3 w-100">
-              <h5 class="mb-0 text-capitalize">abdullah al mamun</h5>
+              <h5 class="mb-0 text-capitalize">{{request.patientname}}</h5>
               <small>
-                <span class="text-muted pr-2">12:00 AM</span>
+                <span class="text-muted pr-2">{{request.date | time}}</span>
                 <span class="text-success">Online</span>
               </small>
-              <p class="mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, eos.</p>
+              <p class="mb-0">{{request.symptoms}}</p>
             </div>
           </div>
           <div class="text-center pt-4">
@@ -31,17 +31,24 @@ export default {
   name: "consultation",
   data() {
     return {
-      requests: []
+      requests: [],
+      doctorId: localStorage.getItem("id"),
+      header: {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token")
+        }
+      }
     };
   },
   mounted() {
-    for (var i = 0; i < 11; i++) {
-      this.requests = i;
-    }
+    this.$axios.get(`${this.$doctor_api}consult-requests/` + this.doctorId, this.header)
+    .then(res => {
+      this.requests = res.data.requests;
+    })
   },
   methods: {
     goConsult(request) {
-      this.$router.push({ path: "/start-consulnt/" + request });
+      this.$router.push({ path: "/chat/" + this.doctorId + '/' + request.patientid });
     }
   }
 };

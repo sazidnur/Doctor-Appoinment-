@@ -103,7 +103,7 @@ const routes = [
     },
   },
   {
-    path: '/chat/:doctorid',
+    path: '/chat/:doctorid/:patientid',
     component: PatientDoctorChatBox,
     beforeEnter: (to, from, next) => {
       if (localStorage.getItem('token')) {

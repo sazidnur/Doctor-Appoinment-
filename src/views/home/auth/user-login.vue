@@ -99,6 +99,7 @@ export default {
             localStorage.setItem("token", res.data.token);
             localStorage.setItem("id", res.data.id);
             localStorage.setItem("type", res.data.type);
+            localStorage.setItem("name", res.data.name);
             if (res.data.type == "doctor") {
               this.$router.push({ path: "/doctor" });
             }

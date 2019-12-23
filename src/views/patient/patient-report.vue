@@ -10,8 +10,7 @@
               </div>
               <div class="card-body">
                 <div class="form-group mb-3">
-                  <small class="text-muted" v-if="label.weightLabel">Weight</small>
-                  <small class="text-danger" v-if="errors.weight_err">{{errors.weight_err}}</small>
+                  <small class="text-muted">Weight</small>
                   <input
                     type="number"
                     class="form-control shadow-none"
@@ -20,11 +19,7 @@
                   />
                 </div>
                 <div class="form-group mb-3">
-                  <small class="text-muted" v-if="label.bloodPressureLabel">BP</small>
-                  <small
-                    class="text-danger"
-                    v-if="errors.bloodPressure_err"
-                  >{{errors.bloodPressure_err}}</small>
+                  <small class="text-muted">BP</small>
                   <input
                     type="number"
                     class="form-control shadow-none"
@@ -33,11 +28,7 @@
                   />
                 </div>
                 <div class="form-group mb-3">
-                  <small class="text-muted" v-if="label.pregnancyWeekLabel">Pregnancy week</small>
-                  <small
-                    class="text-danger"
-                    v-if="errors.pregnancyWeek_err"
-                  >{{errors.pregnancyWeek_err}}</small>
+                  <small class="text-muted">Pregnancy week</small>
                   <input
                     type="number"
                     class="form-control shadow-none"
@@ -55,8 +46,7 @@
               </div>
               <div class="card-body">
                 <div class="form-group mb-3">
-                  <small class="text-muted" v-if="label.symptomsLabel">Symptoms</small>
-                  <small class="text-danger" v-if="errors.symptoms_err">{{errors.symptoms_err}}</small>
+                  <small class="text-muted">Symptoms</small>
                   <textarea
                     rows="6"
                     class="form-control shadow-none"
@@ -68,7 +58,7 @@
                   <button type="button" class="btn btn-block file-btn rounded-0 shadow-none">
                     <i class="fas fa-upload mr-2"></i> Select report file
                   </button>
-                  <input type="file" />
+                  <input type="file" id="file" ref="file" v-on:change="handleFileUpload" />
                 </div>
                 <button type="submit" class="btn btn-block submit-btn shadow-none rounded-0">SUBMIT</button>
               </div>
@@ -85,24 +75,18 @@ export default {
   data() {
     return {
       doctorId: this.$route.params.doctorid,
+      patientid: localStorage.getItem("id"),
       reportData: {
         weight: "",
         bloodPressure: "",
         pregnancyWeek: "",
         symptoms: "",
-        testsFile: []
+        file: ""
       },
-      label: {
-        weightLabel: true,
-        bloodPressureLabel: true,
-        pregnancyWeekLabel: true,
-        symptomsLabel: true
-      },
-      errors: {
-        weight_err: "",
-        bloodPressure_err: "",
-        pregnancyWeek_err: "",
-        symptoms_err: ""
+      header: {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token")
+        }
       }
     };
   },
@@ -110,24 +94,44 @@ export default {
     window.scrollTo(0, 0);
   },
   methods: {
+    handleFileUpload() {
+      this.reportData.file = this.$refs.file.files[0];
+    },
     submitReport() {
-      if (!this.reportData.weight) {
-        this.label.weightLabel = false;
-        this.errors.weight_err = "Weight is required*";
-      } else if (!this.reportData.bloodPressure) {
-        this.label.bloodPressureLabel = false;
-        this.errors.bloodPressure_err = "Blood pressure is required*";
-      } else if (!this.reportData.pregnancyWeek) {
-        this.label.pregnancyWeekLabel = false;
-        this.errors.pregnancyWeek_err = "Pregnancy week is required*";
-      } else if (!this.reportData.symptoms) {
-        this.label.symptomsLabel = false;
-        this.errors.symptoms_err = "Symptoms is required*";
-      } else {
-        this.label = true;
-        this.errors = false;
-      }
-    }
+      let formData = new FormData();
+      formData.append("doctoid", this.doctorId);
+      formData.append("patientid", this.patientid);
+      formData.append("name", localStorage.getItem("name"));
+      formData.append("weight", this.reportData.weight);
+      formData.append("bloodPressure", this.reportData.bloodPressure);
+      formData.append("pregnancyWeek", this.reportData.pregnancyWeek);
+      formData.append("symptoms", this.reportData.symptoms);
+      formData.append("file", this.reportData.file);
+      this.$axios
+        .post(
+          `${this.$consult_api}patient-report-submit`,
+          formData,
+          this.header
+        )
+        .then(res => {
+          if (res.data.message == "success") {
+            this.$fire({
+              title: "Success",
+              text: "Report submitted !!",
+              type: "success",
+              timer: 3000
+            });
+            this.$router.push({
+              path: "/chat/" + this.doctorId + "/" + this.patientid
+            });
+          }
+        });
+    },
+
+ 
+
+
+
   }
 };
 </script>
